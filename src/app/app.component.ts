@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { FirebaseAuthService } from './service/firebase-auth.service'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'chat-withme';
+  constructor(private authService : FirebaseAuthService) {
+  }
+  logOut(){
+    this.authService.logout();
+  }
 }
